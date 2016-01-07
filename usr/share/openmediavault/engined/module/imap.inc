@@ -112,7 +112,7 @@ class OMVModuleImap extends OMVModuleServiceAbstract implements
      * @return void
      */
     public function stopService()
-    {   
+    {
         $initd = new OMVSysVInitScript("courier-authdaemon");
         $initd->exec();
         $initd = new OMVSysVInitScript("courier-imap");

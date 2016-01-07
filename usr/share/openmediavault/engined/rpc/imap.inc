@@ -55,7 +55,7 @@ class OMVRpcServiceImap extends OMVRpcServiceAbstract
         // Modify result data
         $object["enable"]    = boolval($object["enable"]);
         $object["maxperip"] = intval($object["maxperip"]);
-        
+
         return $object;
     }
 

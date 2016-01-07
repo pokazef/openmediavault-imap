@@ -35,9 +35,9 @@ Ext.define("OMV.module.admin.service.imap.Settings", {
 });
 
 OMV.WorkspaceManager.registerPanel({
-    id: "settings", 
-    path: "/service/imap", 
-    text: _("Settings"), 
+    id: "settings",
+    path: "/service/imap",
+    text: _("Settings"),
     position: 10,
-    className: "OMV.module.admin.service.imap.Settings" 
+    className: "OMV.module.admin.service.imap.Settings"
 });
