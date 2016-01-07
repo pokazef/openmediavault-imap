@@ -1,0 +1,5 @@
+openmediavault-imap (0.1.0) stable; urgency=low
+
+  * Initial release
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 7 Jan 2016 11:24:00 +0100

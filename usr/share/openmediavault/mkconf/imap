@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+OMV_IMAP_XPATH="//services/imap"
+OMV_IMAP_CONF="/tmp/imap.conf"
+
+# cat <<EOF > ${OMV_IMAP_CONF}
+# enable   = $(omv_config_get "${OMV_IMAP_XPATH}/enable")
+# maxperip = $(omv_config_get "${OMV_IMAP_XPATH}/maxperip")
+# EOF
+
+sed -i -e 's/^MAXPERIP=.*$/MAXPERIP='$(omv_config_get "${OMV_IMAP_XPATH}/maxperip")'/' /etc/courier/imapd
+
+exit 0

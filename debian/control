@@ -1,0 +1,18 @@
+Source: openmediavault-imap
+Section: net
+Priority: optional
+Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+XB-Plugin-Section: remote
+
+Package: openmediavault-imap
+Architecture: all
+Depends: openmediavault (>= 1.0.7),
+         courier-imap,
+         gamin,
+         ${misc:Depends}
+Description: IMAP server plugin for OpenMediaVault.
+ This plugin provides IMAP mailboxes for the users. It also allows
+ you to receive mail directly to your own domain (inbound SMTP) and
+ to configure aliases, POP connectors and auto-responders.
