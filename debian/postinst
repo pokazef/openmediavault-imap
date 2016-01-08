@@ -17,6 +17,9 @@ case "$1" in
             omv_config_add_element "${SERVICE_XPATH}" "maxperip" "20"
         fi
 
+        # Add Maildir skel
+        maildirmake /etc/skel/Maildir
+
         # Activate package triggers. These triggers are only set during the
         # package installation.
         dpkg-trigger update-fixperms
