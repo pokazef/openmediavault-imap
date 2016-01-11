@@ -16,6 +16,12 @@ case "$1" in
 
         # Remove Maildir skel
         rm -rf /etc/skel/Maildir
+
+        # Postfix mkconf hack (FIXME)
+        cd /usr/share/openmediavault/mkconf
+        rm postfix
+        mv postfix.d/10notification postfix
+        rmdir postfix.d
     ;;
 
     remove)

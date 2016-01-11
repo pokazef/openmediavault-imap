@@ -21,6 +21,12 @@ case "$1" in
         # Add Maildir skel
         maildirmake /etc/skel/Maildir || true
 
+        # Postfix mkconf hack (FIXME)
+        cd /usr/share/openmediavault/mkconf
+        mv postfix postfix.d/10notification
+        cat nfsd | sed 's/NFSD/POSTFIX/g' | sed 's/nfsd/postfix/g' > postfix
+        chmod 755 postfix
+
         # Activate package triggers. These triggers are only set during the
         # package installation.
         dpkg-trigger update-fixperms
