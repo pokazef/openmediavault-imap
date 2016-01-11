@@ -18,5 +18,6 @@ fi
 sed -i -e "s/^\(mydestination =.*\)$/\1 example.com/" $OMV_POSTFIX_CONFIG
 sed -i -e "s/^\(inet_interfaces =\).*$/\1 all/" $OMV_POSTFIX_CONFIG
 echo "home_mailbox = Maildir/" >> $OMV_POSTFIX_CONFIG
+echo "mynetworks = 127.0.0.0/8 [::1]/128" >> $OMV_POSTFIX_CONFIG
 
 exit 0
