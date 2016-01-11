@@ -19,7 +19,7 @@ case "$1" in
         fi
 
         # Add Maildir skel
-        maildirmake /etc/skel/Maildir
+        maildirmake /etc/skel/Maildir || true
 
         # Activate package triggers. These triggers are only set during the
         # package installation.
