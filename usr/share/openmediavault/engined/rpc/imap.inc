@@ -78,7 +78,7 @@ class OMVRpcServiceImap extends OMVRpcServiceAbstract
                 "type"       : "object",
                 "properties" : {
                     "enable"   : { "type" : "boolean" },
-                    "maxperip" : { "type" : "integer", "minimum" : 1, "maximum" : 100 }
+                    "maxperip" : { "type" : "integer", "minimum" : 1, "maximum" : 100 },
                     "domain"   : { "type" : "string" }
                 }
             }'
