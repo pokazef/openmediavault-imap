@@ -53,7 +53,7 @@ class OMVRpcServiceImap extends OMVRpcServiceAbstract
         }
 
         // Modify result data
-        $object["enable"]    = boolval($object["enable"]);
+        $object["enable"]   = boolval($object["enable"]);
         $object["maxperip"] = intval($object["maxperip"]);
 
         return $object;
@@ -77,16 +77,18 @@ class OMVRpcServiceImap extends OMVRpcServiceAbstract
             '{
                 "type"       : "object",
                 "properties" : {
-                    "enable"    : { "type" : "boolean" },
+                    "enable"   : { "type" : "boolean" },
                     "maxperip" : { "type" : "integer", "minimum" : 1, "maximum" : 100 }
+                    "domain"   : { "type" : "string" }
                 }
             }'
         );
 
         // Prepare configuration data
         $object = array(
-            "enable"    => array_boolval($params, "enable"),
+            "enable"   => array_boolval($params, "enable"),
             "maxperip" => $params["maxperip"],
+            "domain"   => $params["domain"],
         );
 
         // Set configuration object

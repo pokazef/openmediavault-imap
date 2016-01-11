@@ -29,6 +29,15 @@ Ext.define("OMV.module.admin.service.imap.Settings", {
                     ptype: "fieldinfo",
                     text: _("Maximum number of connections per IP")
                 }]
+            }, {
+                xtype: "textfield",
+                name: "domain",
+                fieldLabel: _("Local domain"),
+                allowBlank: true,
+                plugins: [{
+                        ptype: "fieldinfo",
+                        text: _("Domain for which this server will accept email.")
+                }]
             }]
         }];
     }

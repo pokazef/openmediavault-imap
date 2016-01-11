@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+OMV_IMAP_PLUGIN_XPATH="//services/imap"
+OMV_POSTFIX_CONFIG="/etc/postfix/main.cf"
+
+# Modifiy configuration only if the service is enabled.
+# FIXME: ... and only if inbound SMTP is activated.
+if [ "$(omv_config_get "${OMV_IMAP_PLUGIN_XPATH}/enable")" != "1" ]; then
+    exit 0
+fi
+
+# Modify the Postfix configuration.
+sed -i -e "s/^\(mydestination =.*\)$/\1 example.com/" $OMV_POSTFIX_CONFIG
+sed -i -e "s/^\(inet_interfaces =\).*$/\1 all/" $OMV_POSTFIX_CONFIG
+echo "home_mailbox = Maildir/" >> $OMV_POSTFIX_CONFIG
+
+exit 0
