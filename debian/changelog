@@ -1,3 +1,9 @@
+openmediavault-imap (0.1.2) stable; urgency=low
+
+  * Bugfix release
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 14 Jan 2017 16:12:00 +0100
+
 openmediavault-imap (0.1.1) stable; urgency=low
 
   * Allow inbound SMTP to local domain
