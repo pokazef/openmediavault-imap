@@ -16,10 +16,14 @@ fi
 
 DEST=$(omv_config_get "${OMV_IMAP_PLUGIN_XPATH}/domain")
 
+# Local hostname for Fetchmail
+DEST="$DEST `cat /etc/mailname`"
+
 # Modify the Postfix configuration.
 sed -i -e "s/^\(mydestination =.*\)$/\1 $DEST/" $OMV_POSTFIX_CONFIG
 sed -i -e "s/^\(inet_interfaces =\).*$/\1 all/" $OMV_POSTFIX_CONFIG
 echo "home_mailbox = Maildir/" >> $OMV_POSTFIX_CONFIG
 echo "mynetworks = 127.0.0.0/8 192.168.0.0/16 10.0.0.0/8 [::1]/128" >> $OMV_POSTFIX_CONFIG
+echo "message_size_limit = 40000000" >> $OMV_POSTFIX_CONFIG
 
 exit 0
